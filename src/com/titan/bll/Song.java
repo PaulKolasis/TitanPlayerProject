@@ -10,7 +10,13 @@ package com.titan.bll;
  */
 public class Song {
     private static Song index;
-
+    
+    private String title;
+    private String artist;
+    private String rating;
+    private String bpm;
+    
+    
     public static Song get(int index) {
         
     return Song.index;
@@ -37,9 +43,36 @@ public class Song {
 
     
      
-    public Song(String title, String artist) {
-       
+    public Song(String t, String a, String r, String b) {
+        title = t;
+        artist = a;
+        rating = r;
+        bpm = b;
     }
+
+    public Song(String wheel_in_The_Sky, String journey) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    public String getTitle(){
+        return title;
+    }
+    public String getArist(){
+        return artist;
+    }
+    public String getRating(){
+        return rating;
+    }
+    public String getBpm(){
+        return bpm;
+    }
+    @Override
+    public String toString(){
+        return ("Title : "+ title + "," + "Artist : " + artist +
+                "Rating : " + rating);
+    }
+    
 
     double getPlayTime() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -56,11 +89,4 @@ public class Song {
     public Object getArtist() {
       return getArist();
     }
-
-    private Object getArist() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-    
 }
